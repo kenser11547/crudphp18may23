@@ -21,6 +21,7 @@ abstract class  Conexion{
         self::conectar();
         $sentencia = self::$conexion->prepare($sql);
         $resultado = $sentencia->execute();
+        self::$conexion = null;
         return $resultado;
     }
 }
